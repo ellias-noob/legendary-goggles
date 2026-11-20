@@ -1,0 +1,173 @@
+/* GERAL E FUNDO AZUL VIVO (#1E90FF) */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1E90FF;
+  min-height: 100vh;
+}
+
+/* Imagem de Fundo Esfumada para os Dashboards */
+.dashboard-bg {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover; 
+    background-position: center; 
+    opacity: 0.15; 
+    z-index: -1;
+}
+
+/* ================= LOGIN ================= */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container { 
+  display: flex; 
+  background-color: #FFE4C4; 
+  border-radius: 16px; 
+  width: 100%;
+  max-width: 850px; 
+  min-height: 480px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25); 
+  overflow: hidden; 
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.login-left { 
+  background: #1e3a8a; 
+  color: white; 
+  padding: 50px 40px; 
+  width: 50%; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+}
+
+.login-left h1 { font-size: 24px; margin-bottom: 10px; }
+.login-left p { font-size: 14px; opacity: 0.9; margin-bottom: 15px; }
+.login-left ul { list-style: none; padding: 0; margin: 0; }
+.login-left li { padding: 5px 0; font-size: 14px; }
+
+.login-box { 
+  padding: 50px 40px; 
+  width: 50%; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+}
+
+.login-box h2 { color: #1e293b; margin-bottom: 20px; font-size: 22px; }
+.login-box label { font-size: 13px; font-weight: 600; color: #334155; display: block; margin-top: 10px; }
+.login-box input { 
+  width: 100%; 
+  padding: 14px; 
+  margin: 8px 0 16px 0; 
+  border: 1px solid #cbd5e1; 
+  border-radius: 8px; 
+  box-sizing: border-box; 
+  font-size: 14px; 
+  background: #ffffff; 
+}
+
+/* BOTÕES */
+.btn-primary { 
+  width: 100%; 
+  padding: 14px; 
+  background: #10b981; 
+  color: white; 
+  border: none; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  font-weight: bold; 
+  font-size: 15px; 
+  transition: 0.2s; 
+}
+.btn-primary:hover { background: #059669; }
+
+.btn-secondary { 
+  width: 100%; 
+  padding: 12px; 
+  background: transparent; 
+  color: #475569; 
+  border: 1px solid #94a3b8; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  font-weight: 500; 
+  font-size: 14px; 
+  transition: 0.2s; 
+  margin-top: 10px; 
+}
+.btn-secondary:hover { background: rgba(0,0,0,0.05); }
+
+/* ================= DASHBOARD & SIDEBAR ================= */
+.dashboard-body-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px 40px 75px;
+  box-sizing: border-box;
+}
+
+/* SIDEBAR MINIMALISTA */
+.sidebar {
+    width: 45px; height: 100vh; background: #1e293b; color: white;
+    position: fixed; top: 0; left: 0; transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 100; overflow: hidden; box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+}
+.sidebar:hover { width: 240px; }
+.sidebar-arrow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; opacity: 0.9; }
+.sidebar:hover .sidebar-arrow { display: none; }
+.sidebar-content { padding: 25px; opacity: 0; transition: opacity 0.3s; white-space: nowrap; }
+.sidebar:hover .sidebar-content { opacity: 1; }
+.sidebar h2 { font-size: 18px; margin-top: 0; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px; }
+.sidebar ul { list-style: none; padding: 0; margin-top: 20px; }
+.sidebar li { padding: 12px 10px; cursor: pointer; border-radius: 8px; margin-bottom: 8px; font-weight: 500; transition: background 0.2s; }
+.sidebar li:hover { background: rgba(255,255,255,0.15); }
+.btn-logout { color: #ff8e8e !important; font-weight: bold; }
+
+/* CARD DO DASHBOARD */
+.card { 
+  background-color: #FFE4C4; 
+  border-radius: 16px; 
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25); 
+  border: 1px solid rgba(0, 0, 0, 0.08); 
+  padding: 40px;
+  width: 100%;
+  max-width: 850px;
+  box-sizing: border-box;
+}
+
+.hidden { display: none !important; }
+
+/* TABELAS DO DASHBOARD */
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  margin-top: 20px; 
+  background: rgba(255, 255, 255, 0.85); 
+  border-radius: 8px; 
+  overflow: hidden; 
+}
+th, td { 
+  padding: 12px; 
+  border-bottom: 1px solid #cbd5e1; 
+  text-align: left; 
+  color: #1e293b;
+}
+th { 
+  background: #1e3a8a; 
+  color: white; 
+  text-transform: uppercase; 
+  font-size: 12px; 
+}

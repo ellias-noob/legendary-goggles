@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal SECITEC - Administrador</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-bg"></div>
+
+    <aside class="sidebar">
+        <div class="sidebar-arrow">➔</div>
+        <div class="sidebar-content">
+            <h2>⚙️ Admin</h2>
+            <ul>
+                <li onclick="mostrarAbaAdmin('turmas')">🏫 Gerenciar Turmas</li>
+                <li onclick="mostrarAbaAdmin('cadastrar')">➕ Novo Aluno</li>
+                <li onclick="mostrarAbaAdmin('listar')">📋 Alunos Registrados</li>
+                <li onclick="logout()" class="btn-logout">🚪 Sair</li>
+            </ul>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <!-- Aba 1: Criar Turma e Definir Professor Regente -->
+        <section id="aba-turmas" class="card">
+            <div class="card-header-decor">🏫 Turmas e Professores</div>
+            <h2>Cadastrar Nova Turma</h2>
+            <p class="subtitle">Crie uma turma e defina o professor regente responsável.</p>
+
+            <form onsubmit="cadastrarTurma(event)">
+                <div class="input-group">
+                    <label for="nomeTurma">Nome da Turma</label>
+                    <input type="text" id="nomeTurma" required placeholder="Ex: 9º C">
+                </div>
+
+                <div class="input-group">
+                    <label for="professorRegente">Professor Regente (Matéria / Nome)</label>
+                    <select id="professorRegente" required>
+                        <option value="">Selecione o professor regente...</option>
+                        <option value="matematica">📊 Matemática</option>
+                        <option value="portugues">📖 Português</option>
+                        <option value="historia">🏛️ História</option>
+                        <option value="geografia">🌎 Geografia</option>
+                        <option value="ciencias">🔬 Ciências</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-salvar">🚀 Criar Turma</button>
+            </form>
+
+            <div style="margin-top: 30px;">
+                <h3>Turmas Ativas no Sistema</h3>
+                <ul id="listaTurmasCadastradas" style="list-style: none; padding: 0; margin-top: 10px;">
+                    <!-- Preenchido via JS -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Aba 2: Cadastrar Aluno -->
+        <section id="aba-cadastrar" class="card hidden">
+            <div class="card-header-decor">🎓 Alunos e Credenciais</div>
+            <h2>Registar Novo Aluno</h2>
+            <p class="subtitle">Insira o aluno numa turma existente, defina matrícula e senha.</p>
+
+            <form onsubmit="cadastrarAluno(event)">
+                <div class="input-group">
+                    <label for="admNome">Nome Completo</label>
+                    <input type="text" id="admNome" required placeholder="Ex: Ana Souza">
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="admTurmaSelect">Selecionar Turma</label>
+                        <select id="admTurmaSelect" required>
+                            <option value="">Escolha a turma...</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="admMatricula">Matrícula (Login)</label>
+                        <input type="text" id="admMatricula" required placeholder="Ex: 2024999">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="admSenha">Senha de Acesso</label>
+                    <input type="password" id="admSenha" required placeholder="Senha do aluno">
+                </div>
+
+                <button type="submit" class="btn-salvar">🚀 Registar Aluno</button>
+            </form>
+        </section>
+
+        <!-- Aba 3: Listar Alunos -->
+        <section id="aba-listar" class="card hidden">
+            <h2>📋 Alunos Registrados</h2>
+            <p class="subtitle">Lista geral de alunos e respetivas contas.</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Turma</th>
+                            <th>Matrícula</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaAlunosAdmin">
+                        <!-- Preenchido via JS -->
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="btn-voltar" onclick="mostrarAbaAdmin('turmas')">⬅ Voltar</button>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

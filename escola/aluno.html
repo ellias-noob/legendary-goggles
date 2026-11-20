@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal SECITEC - Boletim do Aluno</title>
+    <link rel="stylesheet" href="aluno.css">
+</head>
+<body>
+    <div class="dashboard-bg"></div>
+
+    <div class="main-container">
+        <div class="card-dashboard">
+            <div class="card-header-decor">🎓 Boletim Escolar</div>
+            
+            <h2 id="nomeAlunoTitulo">Olá, Aluno(a)</h2>
+            <p class="subtitle"><strong>Matrícula:</strong> <span id="spanMatricula">-</span> | <strong>Turma:</strong> <span id="spanTurma">-</span></p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Matéria / Disciplina</th>
+                            <th>1º Bim</th>
+                            <th>2º Bim</th>
+                            <th>3º Bim</th>
+                            <th>4º Bim</th>
+                            <th>Recuperação</th>
+                            <th>Faltas</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaBoletim">
+                        <!-- Preenchido via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <button type="button" class="btn-voltar" onclick="logout()">Sair da Conta</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

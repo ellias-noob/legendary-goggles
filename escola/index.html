@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal SECITEC - Versão Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Tela de Login -->
+    <div id="login-section" class="login-body">
+        <div class="login-container">
+            <div class="login-left">
+                <h1>📚 Portal SECITEC</h1>
+                <p>Consulte as suas notas, boletins e frequência escolar.</p>
+                <ul>
+                    <li>📊 Acompanhamento por Bimestre</li>
+                    <li>🎓 Histórico Acadêmico</li>
+                    <li>🏫 Gestão de Turmas e Alunos</li>
+                </ul>
+            </div>
+            <div class="login-box">
+                <h2>Entrar no Sistema</h2>
+                <form onsubmit="fazerLogin(event)">
+                    <label>Usuário / Matrícula / Matéria:</label>
+                    <input type="text" id="user" required placeholder="ex: 12345 (aluno) ou matematica (prof)">
+
+                    <label>Senha:</label>
+                    <input type="password" id="pass" required placeholder="Sua senha">
+
+                    <button type="submit" class="btn-primary">Entrar</button>
+                    <p id="erro-msg" style="display: none; color: #dc2626; margin-top: 10px; font-size: 13px;"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela do Painel (Dashboard) - Inicialmente Oculta -->
+    <div id="dashboard-section" class="dashboard-body-wrapper hidden">
+        <div class="dashboard-bg"></div>
+        
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-arrow">➔</div>
+            <div class="sidebar-content">
+                <h2 id="tituloPainel">Painel</h2>
+                <ul>
+                    <li onclick="mudarAba('notas')">📝 Lançar / Ver Notas</li>
+                    <li onclick="logout()" class="btn-logout">🚪 Sair</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="card" style="max-width: 800px; margin: auto;">
+            <h2 id="bemVindoTitulo">Bem-vindo ao Portal</h2>
+            <p id="subTextoPainel" style="color: #475569; margin-bottom: 20px;">Gerencie as informações por aqui.</p>
+            
+            <div id="conteudoDinamico">
+                <!-- Conteúdo injetado via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
